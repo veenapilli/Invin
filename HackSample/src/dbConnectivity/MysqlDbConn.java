@@ -37,9 +37,9 @@ public class MysqlDbConn {
 	}
 
 	protected void setConnection() throws Exception{
-		Class.forName(getSqlDvr());
+		Class.forName(sqlDvr);
 		connect = DriverManager
-				.getConnection(getDvrMgrConn(), getUsrName(), getPwd());
+				.getConnection(dvrMgrConn, usrName, pwd);
 	}
 	public ResultSet readDB(String tabName) throws SQLException{
 		if( null == tabName) System.out.println("Table Name not specified");
@@ -175,7 +175,7 @@ public class MysqlDbConn {
 		}
 	}
 
-	private void close() {
+	protected void close() {
 		try {
 			if (resultSet != null) {
 				resultSet.close();

@@ -43,6 +43,7 @@ public class TestConn {
 
 			System.out.println("METEDATA DB:");
 			checkConn.writeMetaData();
+			checkConn.close();
 		}catch(Exception e){
 			System.out.println("exc:"+e.getMessage()+ e.getStackTrace());
 		}
