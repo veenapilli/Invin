@@ -1,11 +1,9 @@
 package dbConnectivity;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Date;
 import java.util.List;
 import java.util.*;
 
@@ -13,11 +11,11 @@ public class MysqlDbConn {
 	private String sqlDvr = null, dvrMgrConn = null;
 	private String usrName = null, pwd = null;
 	private String qry = null, table = null, defID = "NULL";
-	List<String> tableList = new ArrayList();
-	List<String> tableCols = new ArrayList();
+	List<String> tableList = new ArrayList<String>();
+	List<String> tableCols = new ArrayList<String>();
 	private Connection connect = null;
 	private Statement statement = null;
-	private PreparedStatement preparedStatement = null;
+	//private PreparedStatement preparedStatement = null;
 	private ResultSet resultSet = null;
 
 	protected MysqlDbConn() {
