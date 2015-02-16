@@ -41,7 +41,7 @@ public class MysqlDbConn {
 		connect = DriverManager
 				.getConnection(dvrMgrConn, usrName, pwd);
 	}
-	public ResultSet readDB(String tabName) throws SQLException{
+	protected ResultSet readDB(String tabName) throws SQLException{
 		if( null == tabName) System.out.println("Table Name not specified");
 		if( null == connect) System.out.println("No connection to table");
 
@@ -128,7 +128,7 @@ public class MysqlDbConn {
 
 	}
 
-	public boolean removeDataDB(String tabName, String deleteRow) throws Exception{
+	protected boolean removeDataDB(String tabName, String deleteRow) throws Exception{
 		if( null == tabName){ System.out.println("Table Name not specified"); return false;}
 		if( null == deleteRow){ System.out.println("Table Name not specified");return false;}
 		if( null == connect){ System.out.println("No connection to table");return false;}
